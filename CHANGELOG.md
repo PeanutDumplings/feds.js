@@ -1,5 +1,11 @@
 # feds.js
 
+## 0.0.3
+
+### Patch Changes
+
+- fc39a1f: Add eslint, prettier and scripts to lint and format
+
 ## 0.0.2
 
 ### Patch Changes
