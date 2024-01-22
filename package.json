@@ -1,19 +1,36 @@
 {
   "name": "feds.js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A lightweight library for interacting with Feds.lol's API",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build"
+    "ci": "pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
   },
-  "keywords": [],
+  "keywords": [
+    "feds.lol",
+    "api",
+    "client",
+    "node",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeanutDumplings/feds.js"
+  },
+  "bugs": {
+    "url": "https://github.com/PeanutDumplings/feds.js/issues"
+  },
   "author": "PeanutDumplings",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.11.5",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
