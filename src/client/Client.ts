@@ -6,6 +6,7 @@ import DiscordManager from "../managers/DiscordManager";
 import { Constants } from "../util/Constants";
 import { LoginDetails } from "../util/Types";
 import { constructFetch } from "../util/Functions";
+import { Sites } from "../util/Enums";
 
 /**
  * The main client class. The entry point for interacting with the API.
@@ -25,7 +26,7 @@ export default class Client {
         this.spotify = new SpotifyManager(this);
         this.discord = new DiscordManager(this);
     }
-
+    public readonly sites = Sites;
     public readonly baseUrl: string = Constants.BaseURL;
     public readonly baseAPIUrl: string = Constants.BaseAPIURL;
     public jwt: string | undefined;
