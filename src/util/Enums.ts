@@ -1,4 +1,4 @@
-export const enum Sites {
+export enum Sites {
     Instagram = 1,
     Twitter = 2,
     Twitch = 3,
