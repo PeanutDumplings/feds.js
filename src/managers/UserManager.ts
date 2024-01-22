@@ -1,5 +1,6 @@
 import Client from "../client/Client";
 import { constructFetch } from "../util/Functions";
+import { UserData } from "../util/Interfaces";
 
 export default class UserManager {
     constructor(private client: Client) {}
@@ -36,5 +37,14 @@ export default class UserManager {
         return await constructFetch("POST", "user/manage/password", this.client.jwt, false, { oldPassword: oldPassword, newPassword: newPassword });
     }
 
-    // TODO: Add method for fetching user's self info (id, email, username)
+    /**
+     * This method is used to fetch the logged-in user's data: id, email and username.
+     * @returns {Promise<UserData>} The user's data
+     */
+
+    async fetch(): Promise<UserData> {
+        return await constructFetch("GET", "user/data", this.client.jwt, true).then((res) => {
+            return res.user;
+        });
+    }
 }
