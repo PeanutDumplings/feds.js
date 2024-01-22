@@ -1,0 +1,12 @@
+node_modules
+test
+src
+.changeset
+.github
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+tsconfig.json
+pnpm-lock.yaml
+vite.config.mts
