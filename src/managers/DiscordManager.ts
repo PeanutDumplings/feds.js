@@ -1,5 +1,6 @@
 import Client from "../client/Client";
 import { constructFetch } from "../util/Functions";
+import { DiscordData } from "../util/Interfaces";
 
 export default class DiscordManager {
     constructor(private client: Client) {}
@@ -32,5 +33,17 @@ export default class DiscordManager {
 
     async enableActivity(enabled: boolean): Promise<void> {
         return await constructFetch("POST", "biolink/manage/discord/activity", this.client.jwt, false, { activity: enabled });
+    }
+
+    /**
+     * This method is used to fetch a user's (who is in the feds.lol discord server) data.
+     * @param id The Discord ID to fetch
+     * @returns {Promise<DiscordData>} The Discord data
+     */
+
+    async fetch(id: string): Promise<DiscordData> {
+        return await constructFetch("GET", `biolink/manage/${id}`, this.client.jwt, true).then((res) => {
+            return res.data.data;
+        });
     }
 }
