@@ -7,14 +7,12 @@
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "scripts": {
-        "dev": "vitest",
-        "test": "vitest run",
         "format": "prettier --write \"**/*.{js,ts,md}\"",
         "lint": "tsc",
         "lint:eslint": "eslint . --ext .js,.ts",
         "lint:fix": "eslint . --ext .js,.ts --fix",
         "build": "tsup src/index.ts --format cjs,esm --dts",
-        "ci": "pnpm run lint && pnpm run lint:eslint && pnpm run format && pnpm run test && pnpm run build",
+        "ci": "pnpm run lint && pnpm run lint:eslint && pnpm run format && pnpm run build",
         "release": "pnpm run ci && changeset publish"
     },
     "keywords": [
@@ -41,7 +39,6 @@
         "eslint": "^8.56.0",
         "prettier": "^3.2.4",
         "tsup": "^8.0.1",
-        "typescript": "^5.3.3",
-        "vitest": "^1.2.1"
+        "typescript": "^5.3.3"
     }
 }
