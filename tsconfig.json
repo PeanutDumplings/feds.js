@@ -1,8 +1,23 @@
+// {
+//     "compilerOptions": {
+//         "target": "ES6",
+//         "module": "commonjs",
+//         "skipLibCheck": true,
+//         // "noEmit": true,
+//         "rootDir": "./src",
+//         "outDir": "./dist",
+//     },
+//     "include": [
+//         "./src/**/*"
+//     ],
+// }
+
 {
     "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
+        "target": "ESNext",
+        "declaration": true,
         "skipLibCheck": true,
-        "noEmit": true
-    }
+        "rootDir": "./src"
+    },
+    "include": ["src/**/*.ts"]
 }

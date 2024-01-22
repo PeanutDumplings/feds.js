@@ -13,6 +13,7 @@
         "lint:eslint": "eslint . --ext .js,.ts",
         "lint:fix": "eslint . --ext .js,.ts --fix",
         "build": "tsup src/index.ts --format cjs,esm --dts",
+        "build:tsc": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
         "ci": "pnpm run lint && pnpm run lint:eslint && pnpm run format && pnpm run build",
         "release": "pnpm run ci && changeset publish"
     },
