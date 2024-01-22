@@ -35,6 +35,12 @@ export interface BiolinkData {
     premium_video: string;
 }
 
+export interface UserData {
+    id: number;
+    username: string;
+    email: string;
+}
+
 export interface SocialsData {
     id: number;
     site: number;
