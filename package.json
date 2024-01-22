@@ -1,40 +1,47 @@
 {
-  "name": "feds.js",
-  "version": "0.0.1",
-  "description": "A lightweight library for interacting with Feds.lol's API",
-  "private": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "dev": "vitest",
-    "test": "vitest run",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "tsc",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build",
-    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
-  },
-  "keywords": [
-    "feds.lol",
-    "api",
-    "client",
-    "node",
-    "wrapper"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PeanutDumplings/feds.js"
-  },
-  "bugs": {
-    "url": "https://github.com/PeanutDumplings/feds.js/issues"
-  },
-  "author": "PeanutDumplings",
-  "license": "MIT",
-  "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "@types/node": "^20.11.5",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.2.1"
-  }
+    "name": "feds.js",
+    "version": "0.0.2",
+    "description": "A lightweight library for interacting with Feds.lol's API",
+    "private": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "vitest",
+        "test": "vitest run",
+        "format": "prettier --write \"**/*.{js,ts,md}\"",
+        "lint": "tsc",
+        "lint:eslint": "eslint . --ext .js,.ts",
+        "lint:fix": "eslint . --ext .js,.ts --fix",
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "ci": "pnpm run lint && pnpm run lint:eslint && pnpm run format && pnpm run test && pnpm run build",
+        "release": "pnpm run ci && changeset publish"
+    },
+    "keywords": [
+        "feds.lol",
+        "api",
+        "client",
+        "node",
+        "wrapper"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PeanutDumplings/feds.js"
+    },
+    "bugs": {
+        "url": "https://github.com/PeanutDumplings/feds.js/issues"
+    },
+    "author": "PeanutDumplings",
+    "license": "MIT",
+    "devDependencies": {
+        "@changesets/cli": "^2.27.1",
+        "@types/node": "^20.11.5",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint": "^8.56.0",
+        "prettier": "^3.2.4",
+        "tsup": "^8.0.1",
+        "typescript": "^5.3.3",
+        "vitest": "^1.2.1"
+    }
 }
