@@ -1,6 +1,6 @@
 # Feds.js
 
-A lightweight package that makes it simple to interact with [feds.lol's](https://feds.lol) API
+A lightweight fully documented and typed package that makes it simple to interact with [feds.lol's](https://feds.lol) API
 
 ## Installation and Import
 
@@ -59,7 +59,7 @@ client
 
 This wrapper exposes _most_ of the available endpoints, however creating, updating and deleting socials is not yet supported as is fetching the authenticated user's data
 
-We can organise the methods into 6 main groups:
+We can organise the methods into **7** main groups:
 
 ### Free biolink methods
 
@@ -83,6 +83,16 @@ client.biolink.setMP4("{mp4 video url}");
 client.biolink.setNameColour("#ff0000");
 client.biolink.enableSparkles(true);
 client.biolink.enableTypewriter(false);
+```
+
+### Socials methods
+
+These methods allow the user to create, update and delete their own socials.
+
+```js
+client.socials.create(client.sites.Website, "https://meow.rest");
+client.socials.update(100, "peanutdumplings");
+client.socials.delete(10);
 ```
 
 ### User methods
@@ -116,17 +126,11 @@ client.discord.enableActivity(true);
 
 ### Fetch methods
 
-These methods allow you to fetch a biolink's data and socials
+These methods allow you to fetch the logged-in user's data, a discord user's information, spotify usage and presence/activites and a biolink's socials and data
 
 ```js
 client.biolink.fetch("dumplings").then(console.log);
+client.user.fetch().then(console.log);
 client.socials.fetch("dumplings").then(console.log);
+client.discord.fetch("388858536521629706").then(console.log);
 ```
-
-## Planned methods
-
-The following are planned to be implemented:
-
--   Fetching the logged-in user's data
--   Creating, editing and deleting socials
--   Fetching a user's discord presence information
