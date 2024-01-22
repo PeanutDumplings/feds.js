@@ -1,4 +1,4 @@
-import { BiolinkData } from "..";
+import { BiolinkData } from "../util/Interfaces";
 import Client from "../client/Client";
 import { constructFetch } from "../util/Functions";
 
