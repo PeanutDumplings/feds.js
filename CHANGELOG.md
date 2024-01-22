@@ -1,5 +1,11 @@
 # feds.js
 
+## 1.0.0
+
+### Major Changes
+
+- 9d5a620: Update npmignore and release v1 of feds.js
+
 ## 0.1.0
 
 ### Minor Changes
