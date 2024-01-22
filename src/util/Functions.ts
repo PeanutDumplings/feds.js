@@ -26,9 +26,5 @@ export const constructFetch = async (method: string, route: string, jwt: string,
         throw new Error(res.message);
     }
 
-    if (sendData) {
-        return res;
-    } else {
-        return;
-    }
+    return sendData ? res.data : null;
 };
